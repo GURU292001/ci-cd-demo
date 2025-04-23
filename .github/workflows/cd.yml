@@ -17,6 +17,7 @@
 #       run: echo "🚀 CI/CD is running! Working done by guru"
 
 
+
 name: Deploy to GitHub Pages
 
 on:
@@ -40,5 +41,10 @@ jobs:
         git switch gh-pages
         git checkout main -- index.html
         git commit -am "Auto-update site"
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} gh-pages
 
+    - name: Check Git identity
+      run: git config --list
+
+    - name: Push to gh-pages
+      run: |
+        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} gh-pages
