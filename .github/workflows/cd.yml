@@ -34,8 +34,8 @@ jobs:
 
     - name: Copy index.html to gh-pages branch
       run: |
-        git config --global user.name "ci-bot"
-        git config --global user.email "ci@example.com"
+        git config --global user.name "gurumurugan.name"
+        git config --global user.email "guru292001@gmail.com"
         git fetch origin
         git switch gh-pages
         git checkout main -- index.html
