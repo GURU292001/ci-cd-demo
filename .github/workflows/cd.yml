@@ -40,4 +40,5 @@ jobs:
         git switch gh-pages
         git checkout main -- index.html
         git commit -am "Auto-update site"
-        git push origin gh-pages
+        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} gh-pages
+
